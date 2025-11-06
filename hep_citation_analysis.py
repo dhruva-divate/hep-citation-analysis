@@ -37,7 +37,7 @@ METHODOLOGY:
    - Select top ten percent by each measure as 'influential'
 
 3. Detect Communities
-   - Apply modularity maximization (greedy algorithm)
+   - Apply modularity maximisation (greedy algorithm)
    - Assign each paper to a community
    - Measure network modularity
 
@@ -51,7 +51,7 @@ METHODOLOGY:
    - Visual comparison using box plots
    - Interpret differences
 
-6. Visualize & Interpret
+6. Visualise & Interpret
    - Box plots: cross-community ratios across groups
    - Bar charts: mean bridging behavior by paper type
    - Scatter plot: betweenness vs. cross-community ratio
