@@ -130,7 +130,7 @@ The script generates:
 - **Format**: Edge list (tab or space separated)
 - **Size**: 27,770 papers, 352,807 citation links
 - **Time Period**: Papers from January 1993 to April 2003
-
+- cit-HepTh.txt # Citation network data (IS INCLUDED IN THIS REPO)
 ### Data Format
 ```
 # Source  Target
