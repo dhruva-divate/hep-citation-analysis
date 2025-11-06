@@ -223,7 +223,7 @@ If you use this analysis in your work, please cite:
   title = {HEP-Th Citation Network Analysis: Bridging vs. Siloing},
   year = {2025},
   publisher = {GitHub},
-  url = {https://github.com/yourusername/hep-citation-analysis}
+  url = {https://github.com/dhruva-divate/hep-citation-analysis}
 }
 ```
 
