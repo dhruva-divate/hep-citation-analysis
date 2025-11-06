@@ -73,7 +73,6 @@ pip install -r requirements.txt
 Required packages:
 - `networkx>=3.0`
 - `numpy>=1.20`
-- `pandas>=1.3`
 - `matplotlib>=3.5`
 - `scipy>=1.7`
 
