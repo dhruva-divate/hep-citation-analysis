@@ -6,7 +6,7 @@
 
 ## Overview
 
-This project analyzes the citation network from arXiv's High Energy Physics Theory (HEP-Th) category to understand whether influential papers serve as bridges connecting different research communities or as pillars reinforcing disciplinary boundaries.
+This project analyses the citation network from arXiv's High Energy Physics Theory (HEP-Th) category to understand whether influential papers serve as bridges connecting different research communities or as pillars reinforcing disciplinary boundaries.
 
 ## Key Findings
 
@@ -45,7 +45,7 @@ This project analyzes the citation network from arXiv's High Energy Physics Theo
    - Betweenness centrality (structural bridges)
 
 3. **Community Detection**
-   - Modularity maximization (greedy algorithm)
+   - Modularity maximisation (greedy algorithm)
    - Assign papers to communities
    - Measure network modularity
 
@@ -57,10 +57,10 @@ This project analyzes the citation network from arXiv's High Energy Physics Theo
    - Influential vs. non-influential papers
    - Different types of influence (in-degree, PageRank, betweenness)
 
-6. **Visualize Results**
+6. **Visualise Results**
    - Box plots: Cross-community ratios by paper type
-   - Bar charts: Mean bridging behavior
-   - Scatter plot: Betweenness vs. bridging behavior
+   - Bar charts: Mean bridging behaviour
+   - Scatter plot: Betweenness vs. bridging behaviour
 
 ## Installation
 
@@ -118,7 +118,7 @@ python hep_citation_analysis.py \
 ### Output Files
 
 The script generates:
-- `bridging_analysis.png`: Comprehensive visualization with 4 subplots
+- `bridging_analysis.png`: Comprehensive visualisation with 4 subplots
 - Console output: Detailed statistics and interpretations for each analysis step
 
 ## Data
@@ -176,7 +176,7 @@ hep-citation-analysis/
  requirements.txt            # Python dependencies
  hep_citation_analysis.py    # Main analysis script
  cit-HepTh.txt              # Citation network data 
- bridging_analysis.png       # Output visualization
+ bridging_analysis.png       # Output visualisation
  LICENSE                     # MIT License
  .gitignore                 # Git ignore file
 ```
@@ -189,7 +189,7 @@ The code follows a sound logical progression:
 
 1. **Network Loading**: Proper directed graph construction from edge list
 2. **Centrality Measures**: Three complementary measures capture different types of influence
-3. **Community Detection**: Modularity maximization on undirected graph (correct approach)
+3. **Community Detection**: Modularity maximisation on undirected graph (correct approach)
 4. **Bridging Calculation**: Separate in/out calculations with proper handling of edge cases
 5. **Statistical Comparison**: Comprehensive comparison across multiple paper groups
 6. **Visualization**: Clear, publication-quality multi-panel figure
