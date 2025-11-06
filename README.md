@@ -11,7 +11,7 @@ This project analyzes the citation network from arXiv's High Energy Physics Theo
 ## Key Findings
 
 ### Main Conclusion
-**Influential papers PREDOMINANTLY REINFORCE SILOS** rather than bridging diverse research communities.
+**Influential papers predominantly reinforce silos** rather than bridging diverse research communities.
 
 ### Summary Statistics
 - **Network Size**: 27,770 papers, 352,807 citations
@@ -176,7 +176,7 @@ hep-citation-analysis/
  README.md                   # This file
  requirements.txt            # Python dependencies
  hep_citation_analysis.py    # Main analysis script
- cit-HepTh.txt              # Citation network data (download separately)
+ cit-HepTh.txt              # Citation network data 
  bridging_analysis.png       # Output visualization
  LICENSE                     # MIT License
  .gitignore                 # Git ignore file
@@ -256,6 +256,7 @@ Potential extensions of this analysis:
 4. **Comparative Study**: Compare HEP-Th with other arXiv categories
 5. **Intervention Studies**: What factors promote cross-community citation?
 6. **Newer Data**: Data is around 2000s, does siloing behaviour still exist?
+
 ## Acknowledgments
 
 - Stanford Network Analysis Project (SNAP) for providing the dataset
