@@ -1,0 +1,260 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 ============================================================\
+HEP-TH CITATION NETWORK ANALYSIS\
+Bridging vs. Siloing in Influential Papers\
+============================================================\
+\
+METHODOLOGY:\
+\
+1. Load Data & Basic Network Stats\
+   - Load HEP-Th citation network (directed graph)\
+   - Compute: nodes, edges, density, degree distribution\
+\
+2. Identify Influential Papers\
+   - Calculate in-degree centrality (most cited papers)\
+   - Calculate betweenness centrality (papers bridging different areas)\
+   - Calculate PageRank as alternative influence measure\
+   - Select top ten percent by each measure as 'influential'\
+\
+3. Detect Communities\
+   - Apply modularity maximization (greedy algorithm)\
+   - Assign each paper to a community\
+   - Measure network modularity\
+\
+4. Measure Bridging Behavior\
+   - For each paper (influential and non-influential):\
+   - Cross-community citation ratio = (# citations to different communities) / (total citations)\
+   - Calculate separately for in-citations and out-citations\
+\
+5. Compare Influential vs. Non-Influential Papers\
+   - Calculate mean cross-community ratio for different groups\
+   - Visual comparison using box plots\
+   - Interpret differences\
+\
+6. Visualize & Interpret\
+   - Box plots: cross-community ratios across groups\
+   - Bar charts: mean bridging behavior by paper type\
+   - Scatter plot: betweenness vs. cross-community ratio\
+\
+7. Answer Research Question\
+   - Do influential papers bridge communities or reinforce silos?\
+   - Discuss implications for scientific collaboration in HEP-Th\
+\
+\
+============================================================\
+STEP 1: Loading Network and Computing Basic Statistics\
+============================================================\
+\
+Network Statistics:\
+  Number of nodes: 27770\
+  Number of edges: 352807\
+  Density: 0.000458\
+  Average degree: 25.41\
+  Average in-degree (citations received): 12.70\
+  Average out-degree (citations made): 12.70\
+  Max in-degree: 2414\
+  Max out-degree: 562\
+  Largest weakly connected component: 27400 nodes (98.7%)\
+\
+Interpretation:\
+  - Sparse network (density < 0.001) typical of citation networks\
+  - Power-law-like degree distribution (few highly cited papers, many with few citations)\
+  - Well-connected network (large weakly connected component)\
+\
+============================================================\
+STEP 2: Identifying Influential Papers\
+============================================================\
+  In-degree centrality calculated\
+  PageRank calculated\
+  Betweenness centrality calculated (sampled)\
+\
+  Top 10% papers by each measure: 2777 papers\
+  Overlap (all three measures): 603 papers (21.7%)\
+  Overlap (in-degree & betweenness): 1045 papers (37.6%)\
+  Overlap (in-degree & pagerank): 1692 papers (60.9%)\
+  Overlap (pagerank & betweenness): 649 papers (23.4%)\
+\
+  Top 5 papers by in-degree:\
+    1. Node 9711200: 2414 citations\
+    2. Node 9802150: 1775 citations\
+    3. Node 9802109: 1641 citations\
+    4. Node 9407087: 1299 citations\
+    5. Node 9610043: 1199 citations\
+\
+  Top 5 papers by PageRank:\
+    1. Node 9407087: 0.006239\
+    2. Node 9503124: 0.004633\
+    3. Node 9510017: 0.004385\
+    4. Node 9402044: 0.003935\
+    5. Node 9711200: 0.003410\
+\
+  Top 5 papers by Betweenness:\
+    1. Node 9905111: 0.106022\
+    2. Node 9810008: 0.089115\
+    3. Node 206223: 0.089041\
+    4. Node 9509140: 0.042166\
+    5. Node 9803001: 0.034998\
+\
+Interpretation:\
+  - Different centrality measures identify distinct types of influential papers\
+  - Limited overlap suggests different pathways to influence\
+  - High in-degree: most cited papers\
+  - High PageRank: cited by other important papers\
+  - High betweenness: structural bridges between communities\
+\
+============================================================\
+STEP 3: Detecting Communities\
+============================================================\
+  Converted to undirected graph: 27770 nodes, 352324 edges\
+\
+  Number of communities detected: 284\
+  Modularity score: 0.5059\
+  Largest communities:\
+    Community 1: 11058 nodes (39.8%)\
+    Community 2: 7591 nodes (27.3%)\
+    Community 3: 5966 nodes (21.5%)\
+    Community 4: 457 nodes (1.6%)\
+    Community 5: 305 nodes (1.1%)\
+  Top 3 communities contain: 24615 nodes (88.6%)\
+\
+Interpretation:\
+  - High modularity (>0.4) indicates strong community structure\
+  - Three dominant research communities capture most papers\
+  - Many small communities (isolated clusters)\
+  - Evidence of disciplinary siloing within HEP-Th\
+\
+============================================================\
+STEP 4: Measuring Bridging Behavior\
+============================================================\
+\
+  Cross-Community Citation Statistics:\
+\
+  In-Citations (who cites this paper):\
+    Papers analyzed: 23180\
+    Mean: 0.1416 (14.16%)\
+    Median: 0.0000 (0.00%)\
+    Std Dev: 0.2354\
+\
+  Out-Citations (what this paper cites):\
+    Papers analyzed: 25059\
+    Mean: 0.1319 (13.19%)\
+    Median: 0.0000 (0.00%)\
+    Std Dev: 0.2040\
+\
+Interpretation:\
+  - Low mean ratios (~14%) indicate most citations stay within communities\
+  - Median of 0% means over half of papers have NO cross-community citations\
+  - High std dev suggests some papers bridge while most don't\
+  - Strong evidence of disciplinary siloing\
+\
+============================================================\
+STEP 5: Comparing Influential vs. Non-Influential Papers\
+============================================================\
+\
+  IN-CITATIONS (Who cites this paper):\
+    High In-Degree (Most Cited):\
+      Mean: 0.1477 (14.77%)\
+      Median: 0.0938 (9.38%)\
+      n = 2777\
+    High PageRank:\
+      Mean: 0.1506 (15.06%)\
+      Median: 0.0943 (9.43%)\
+      n = 2777\
+    High Betweenness:\
+      Mean: 0.1846 (18.46%)\
+      Median: 0.1111 (11.11%)\
+      n = 2777\
+    Non-Influential (Random Sample):\
+      Mean: 0.1354 (13.54%)\
+      Median: 0.0000 (0.00%)\
+      n = 17632\
+\
+  OUT-CITATIONS (What this paper cites):\
+    High In-Degree (Most Cited):\
+      Mean: 0.1739 (17.39%)\
+      Median: 0.0769 (7.69%)\
+      n = 2594\
+    High PageRank:\
+      Mean: 0.1705 (17.05%)\
+      Median: 0.0354 (3.54%)\
+      n = 2124\
+    High Betweenness:\
+      Mean: 0.1846 (18.46%)\
+      Median: 0.1143 (11.43%)\
+      n = 2777\
+    Non-Influential (Random Sample):\
+      Mean: 0.1227 (12.27%)\
+      Median: 0.0000 (0.00%)\
+      n = 20166\
+\
+Interpretation:\
+  - Influential papers show modestly higher bridging (15-18%) vs non-influential (12-13%)\
+  - High betweenness papers show strongest bridging behavior\
+  - Non-influential papers: median of 0% means most don't bridge at all\
+  - Even influential papers: >80% of citations stay within communities\
+  - Limited bridging even among most influential papers\
+\
+============================================================\
+STEP 6: Creating Visualizations\
+============================================================\
+/Users/dhruvadivate/Desktop/hep-citation-analysis/hep_citation_analysis.py:468: MatplotlibDeprecationWarning: The 'labels' parameter of boxplot() has been renamed 'tick_labels' since Matplotlib 3.9; support for the old name will be dropped in 3.11.\
+  bp1 = axes[0, 0].boxplot(in_data, labels=groups, patch_artist=True)\
+/Users/dhruvadivate/Desktop/hep-citation-analysis/hep_citation_analysis.py:486: MatplotlibDeprecationWarning: The 'labels' parameter of boxplot() has been renamed 'tick_labels' since Matplotlib 3.9; support for the old name will be dropped in 3.11.\
+  bp2 = axes[0, 1].boxplot(out_data, labels=groups, patch_artist=True)\
+  Visualization saved to: ./bridging_analysis.png\
+\
+============================================================\
+CONCLUSIONS\
+============================================================\
+\
+Research Question: Do influential papers in HEP bridge diverse research \
+communities, or do they reinforce disciplinary silos?\
+\
+ANSWER: Influential papers PREDOMINANTLY REINFORCE SILOS, with limited bridging.\
+\
+Key Findings:\
+\
+1. Strong Community Structure:\
+   - High modularity (0.51) reveals three dominant research communities\
+   - These communities contain 89% of all papers\
+   - Clear intellectual boundaries exist within HEP-Th\
+\
+2. Limited Cross-Community Citations:\
+   - Even influential papers: ~15-18% cross-community citations\
+   - Non-influential papers: ~12-13% cross-community citations\
+   - Over 80% of citations stay within communities for ALL paper types\
+   - Median for non-influential papers: 0% (most don't bridge at all)\
+\
+3. Different Types of Influence:\
+   - High betweenness papers: strongest bridging (18%), structural connectors\
+   - High PageRank papers: elite influence within narrow circles (median 3.5% out-citations)\
+   - High in-degree papers: define silos, moderately cited across them\
+\
+4. Structural vs. Direct Bridging:\
+   - Weak negative correlation (r = -0.050) between betweenness and cross-community citations\
+   - Betweenness identifies structural position, not direct citation patterns\
+   - Papers can be "bridges" in network topology without direct cross-boundary citations\
+\
+CONCLUSION:\
+Influential papers in HEP-Th serve primarily as PILLARS strengthening their \
+respective communities rather than BRIDGES connecting diverse research areas.\
+Only high betweenness papers show meaningful (though still limited) cross-community\
+integration. The field exhibits strong disciplinary siloing with limited \
+interdisciplinary citation patterns.\
+\
+Implications:\
+- Research communities in HEP-Th are relatively insular\
+- Cross-pollination of ideas between subfields is limited\
+- Influential papers reinforce existing intellectual boundaries\
+- Future work could investigate causes and potential interventions\
+\
+\
+============================================================\
+ANALYSIS COMPLETE\
+============================================================}

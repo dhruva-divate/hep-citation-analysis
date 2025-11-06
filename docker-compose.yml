@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  hep-analysis:
+    build: .
+    container_name: hep-citation-analysis
+    volumes:
+      # Mount data directory (place cit-HepTh.txt here)
+      - ./data:/app/data
+      # Mount results directory for output
+      - ./results:/app/results
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: python hep_citation_analysis.py --data /app/data/cit-HepTh.txt --output-dir /app/results
