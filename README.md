@@ -49,7 +49,7 @@ This project analyses the citation network from arXiv's High Energy Physics Theo
    - Assign papers to communities
    - Measure network modularity
 
-4. **Measure Bridging Behavior**
+4. **Measure Bridging Behaviour**
    - Cross-community citation ratio = (citations to different communities) / (total citations)
    - Calculate separately for in-citations and out-citations
 
@@ -130,6 +130,7 @@ The script generates:
 - **Size**: 27,770 papers, 352,807 citation links
 - **Time Period**: Papers from January 1993 to April 2003
 - cit-HepTh.txt # Citation network data (IS INCLUDED IN THIS REPO)
+
 ### Data Format
 ```
 # Source  Target
@@ -146,15 +147,15 @@ gunzip cit-HepTh.txt.gz
 
 ## Results
 
-### Visualizations
+### Visualisations
 
 ![Bridging Analysis](bridging_analysis.png)
 
-The visualization includes four key plots:
+The visualisation includes four key plots:
 
 1. **Top-left**: In-citations cross-community ratios (who cites this paper)
 2. **Top-right**: Out-citations cross-community ratios (what this paper cites)
-3. **Bottom-left**: Mean bridging behavior by paper type
+3. **Bottom-left**: Mean bridging behaviour by paper type
 4. **Bottom-right**: Betweenness centrality vs. cross-community citation ratio
 
 ### Statistical Summary
@@ -177,7 +178,7 @@ hep-citation-analysis/
  hep_citation_analysis.py    # Main analysis script
  cit-HepTh.txt              # Citation network data 
  bridging_analysis.png       # Output visualisation
- LICENSE                     # MIT License
+ LICENSE                     # MIT Licence
  .gitignore                 # Git ignore file
 ```
 
@@ -192,7 +193,7 @@ The code follows a sound logical progression:
 3. **Community Detection**: Modularity maximisation on undirected graph (correct approach)
 4. **Bridging Calculation**: Separate in/out calculations with proper handling of edge cases
 5. **Statistical Comparison**: Comprehensive comparison across multiple paper groups
-6. **Visualization**: Clear, publication-quality multi-panel figure
+6. **Visualisation**: Clear, publication-quality multi-panel figure
 
 ### Code Improvements Made
 
@@ -200,14 +201,14 @@ From notebook to script:
 -  Added proper function structure and documentation
 -  Implemented command-line arguments for flexibility
 -  Added error handling and validation
--  Organized code into logical sections with clear progression
+-  Organised code into logical sections with clear progression
 -  Added comprehensive print statements for interpretation
 -  Made output directory configurable
 -  Added proper main() function with argparse
 
 ### Performance Notes
 
-- **Betweenness Centrality**: Computationally expensive O(n^3), script uses sampling (k=5000 nodes)
+- **Betweenness Centrality**: Computationally expensive O(n³), script uses sampling (k=5000 nodes)
 - **Memory Usage**: ~1-2 GB for full network
 - **Runtime**: ~2-5 minutes on modern hardware
 - **Scalability**: Can handle networks with 100K+ nodes with sampling
@@ -237,9 +238,9 @@ Original dataset:
 }
 ```
 
-## License
+## Licence
 
-MIT License - see LICENSE file for details
+MIT Licence - see LICENCE file for details
 
 ## Contributing
 
@@ -249,14 +250,13 @@ Contributions are welcome! Please feel free to submit a Pull Request. For major 
 
 Potential extensions of this analysis:
 
-1. **Temporal Analysis**: How has bridging behavior evolved over time?
+1. **Temporal Analysis**: How has bridging behaviour evolved over time?
 2. **Content Analysis**: Do paper abstracts/titles reveal topical differences between communities?
 3. **Author Networks**: Do author collaboration patterns mirror citation patterns?
 4. **Comparative Study**: Compare HEP-Th with other arXiv categories
 5. **Intervention Studies**: What factors promote cross-community citation?
-6. **Newer Data**: Data is around 2000s, does siloing behaviour still exist?
 
-## Acknowledgments
+## Acknowledgements
 
 - Stanford Network Analysis Project (SNAP) for providing the dataset
 - arXiv for making scientific papers freely available
