@@ -81,7 +81,8 @@ Required packages:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/hep-citation-analysis.git
+git clone https://github.com/dhruva-divate/hep-citation-analysis.git
+
 cd hep-citation-analysis
 
 # Install dependencies
