@@ -208,7 +208,7 @@ From notebook to script:
 
 ### Performance Notes
 
-- **Betweenness Centrality**: Computationally expensive O(n), script uses sampling (k=5000 nodes)
+- **Betweenness Centrality**: Computationally expensive O(n^3), script uses sampling (k=5000 nodes)
 - **Memory Usage**: ~1-2 GB for full network
 - **Runtime**: ~2-5 minutes on modern hardware
 - **Scalability**: Can handle networks with 100K+ nodes with sampling
