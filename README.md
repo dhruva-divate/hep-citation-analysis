@@ -169,19 +169,6 @@ The visualisation includes four key plots:
 
 **Key Observation**: Median of 0% for non-influential papers means over half have NO cross-community citations.
 
-## Project Structure
-
-```
-hep-citation-analysis/
- README.md                   # This file
- requirements.txt            # Python dependencies
- hep_citation_analysis.py    # Main analysis script
- cit-HepTh.txt              # Citation network data 
- bridging_analysis.png       # Output visualisation
- LICENSE                     # MIT Licence
- .gitignore                 # Git ignore file
-```
-
 ## Technical Details
 
 ### Logical Flow Review 
@@ -190,21 +177,10 @@ The code follows a sound logical progression:
 
 1. **Network Loading**: Proper directed graph construction from edge list
 2. **Centrality Measures**: Three complementary measures capture different types of influence
-3. **Community Detection**: Modularity maximisation on undirected graph (correct approach)
+3. **Community Detection**: Modularity maximisation on undirected graph 
 4. **Bridging Calculation**: Separate in/out calculations with proper handling of edge cases
 5. **Statistical Comparison**: Comprehensive comparison across multiple paper groups
-6. **Visualisation**: Clear, publication-quality multi-panel figure
-
-### Code Improvements Made
-
-From notebook to script:
--  Added proper function structure and documentation
--  Implemented command-line arguments for flexibility
--  Added error handling and validation
--  Organised code into logical sections with clear progression
--  Added comprehensive print statements for interpretation
--  Made output directory configurable
--  Added proper main() function with argparse
+6. **Visualisation**: Clear multi-panel figure
 
 ### Performance Notes
 
